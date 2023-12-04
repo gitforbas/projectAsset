@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+        <edmx:Include Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_xhclprodsxworkgroup_sd" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="xHCLPRODSxC_BillingMethodVHType" sap:label="Billing Method Value Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="bill_method"/>
+                    <PropertyRef Name="spras"/>
+                </Key>
+                <Property Name="bill_method" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing Method"/>
+                <Property Name="spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language" sap:quickinfo="Language Key"/>
+                <Property Name="bezei" Type="Edm.String" MaxLength="20" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="xHCLPRODSxC_WorkGroupType" sap:label="MRO Product" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BowWg"/>
+                </Key>
+                <Property Name="BowWg" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="MRO Product" sap:quickinfo="Work Group (MRO Product)"/>
+                <Property Name="description" Type="Edm.String" MaxLength="40" sap:label="Description" sap:quickinfo="Work Group Description"/>
+                <Property Name="matnr" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number" sap:value-list="standard"/>
+                <Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:label="Material Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="bill_method" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing Method" sap:value-list="standard"/>
+                <Property Name="bezei" Type="Edm.String" MaxLength="20" sap:label="Billing Method Description" sap:quickinfo="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ernam" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Name of Person Responsible for Creating the Object"/>
+                <Property Name="erdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On" sap:quickinfo="Date on which the record was created"/>
+                <Property Name="aenam" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By" sap:quickinfo="Name of Person Who Changed Object"/>
+                <Property Name="aedat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:quickinfo="Last Changed On"/>
+                <Property Name="timestamp" Type="Edm.DateTimeOffset" Precision="0" sap:label="Timestamp" sap:quickinfo="UTC Time Stamp in Short Form (YYYYMMDDhhmmss)"/>
+                <Property Name="poski" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Short ID" sap:quickinfo="WBS element short identification"/>
+                <Property Name="MROProduct" Type="Edm.String" MaxLength="20"/>
+                <Property Name="MPLNode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="MPL Node" sap:quickinfo="Workscope / Check level"/>
+                <Property Name="WorkScopeLvl" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Work Scope Level" sap:quickinfo="Workscope / Check level"/>
+                <Property Name="ProdAssigChckBox" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Product Assignment based on DIRs" sap:quickinfo="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+                <NavigationProperty Name="to_mpmbxd" Relationship="cds_xhclprodsxworkgroup_sd.assoc_4FB52FA418CED9E83B4E6976B1162AEF" FromRole="FromRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF" ToRole="ToRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF"/>
+                <NavigationProperty Name="to_wgMark" Relationship="cds_xhclprodsxworkgroup_sd.assoc_7D1E731FBCFC121CE592E4EAA95C5B9D" FromRole="FromRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D" ToRole="ToRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D"/>
+            </EntityType>
+            <EntityType Name="xHCLPRODSxI_MROPRODUCTMBXDType" sap:label="MRO Product MBX Documents" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="workgroup"/>
+                    <PropertyRef Name="dokar"/>
+                    <PropertyRef Name="doknr"/>
+                    <PropertyRef Name="dokvr"/>
+                    <PropertyRef Name="doktl"/>
+                </Key>
+                <Property Name="workgroup" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="MRO Product" sap:quickinfo="Work Group (MRO Product)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="dokar" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Document Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="doknr" Type="Edm.String" Nullable="false" MaxLength="25" sap:display-format="UpperCase" sap:label="Document Number" sap:quickinfo="Document number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="dokvr" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Version" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="doktl" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Document Part" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="extid" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="External Req Id" sap:quickinfo="External  Requirement  ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ingrp" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Maint. Planner Group" sap:quickinfo="Planner Group for Customer Service and Plant Maintenance" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="iwerk" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Planning Plant" sap:quickinfo="Maintenance Planning Plant" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="to_wg" Relationship="cds_xhclprodsxworkgroup_sd.assoc_75F61F496D078307F563D8271C222194" FromRole="FromRole_assoc_75F61F496D078307F563D8271C222194" ToRole="ToRole_assoc_75F61F496D078307F563D8271C222194"/>
+            </EntityType>
+            <EntityType Name="xHCLPRODSxI_WorkGroupMarkUpType" sap:label="Work Group Mark Up Indicator" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="workgroup"/>
+                    <PropertyRef Name="work_type"/>
+                </Key>
+                <Property Name="workgroup" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="MRO Product" sap:quickinfo="Work Group (MRO Product)"/>
+                <Property Name="work_type" Type="Edm.String" Nullable="false" MaxLength="15" sap:display-format="UpperCase" sap:label="Work Type" sap:quickinfo="Bow Work Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="markup_ind" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Mark Up" sap:quickinfo="Checkbox"/>
+                <NavigationProperty Name="to_wghdr" Relationship="cds_xhclprodsxworkgroup_sd.assoc_8D8720DF3E590EC56605D98309179DB4" FromRole="FromRole_assoc_8D8720DF3E590EC56605D98309179DB4" ToRole="ToRole_assoc_8D8720DF3E590EC56605D98309179DB4"/>
+            </EntityType>
+            <EntityType Name="I_MaterialTextType" sap:label="Material Text" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:label="Material Description"/>
+            </EntityType>
+            <EntityType Name="SAP__Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CurrencyCode"/>
+                </Key>
+                <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Short text"/>
+                <Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimals"/>
+            </EntityType>
+            <EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitCode"/>
+                </Key>
+                <Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Internal UoM" sap:semantics="unit-of-measure"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+                <Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Commercial"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="UoM Text"/>
+                <Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Decimal Places"/>
+            </EntityType>
+            <Association Name="assoc_7D1E731FBCFC121CE592E4EAA95C5B9D" sap:content-version="1">
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType" Multiplicity="1" Role="FromRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxI_WorkGroupMarkUpType" Multiplicity="*" Role="ToRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D">
+                        <PropertyRef Name="BowWg"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D">
+                        <PropertyRef Name="workgroup"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_4FB52FA418CED9E83B4E6976B1162AEF" sap:content-version="1">
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType" Multiplicity="1" Role="FromRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxI_MROPRODUCTMBXDType" Multiplicity="*" Role="ToRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF">
+                        <PropertyRef Name="BowWg"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF">
+                        <PropertyRef Name="workgroup"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_75F61F496D078307F563D8271C222194" sap:content-version="1">
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxI_MROPRODUCTMBXDType" Multiplicity="1" Role="FromRole_assoc_75F61F496D078307F563D8271C222194"/>
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType" Multiplicity="1" Role="ToRole_assoc_75F61F496D078307F563D8271C222194"/>
+            </Association>
+            <Association Name="assoc_8D8720DF3E590EC56605D98309179DB4" sap:content-version="1">
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxI_WorkGroupMarkUpType" Multiplicity="1" Role="FromRole_assoc_8D8720DF3E590EC56605D98309179DB4"/>
+                <End Type="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType" Multiplicity="1" Role="ToRole_assoc_8D8720DF3E590EC56605D98309179DB4"/>
+            </Association>
+            <EntityContainer Name="cds_xhclprodsxworkgroup_sd_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SAP__Currencies" EntityType="cds_xhclprodsxworkgroup_sd.SAP__Currency" sap:content-version="1"/>
+                <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_xhclprodsxworkgroup_sd.SAP__UnitOfMeasure" sap:content-version="1"/>
+                <EntitySet Name="xHCLPRODSxC_BillingMethodVH" EntityType="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_BillingMethodVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="xHCLPRODSxC_WorkGroup" EntityType="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="xHCLPRODSxI_MROPRODUCTMBXD" EntityType="cds_xhclprodsxworkgroup_sd.xHCLPRODSxI_MROPRODUCTMBXDType" sap:updatable="false" sap:content-version="1"/>
+                <EntitySet Name="xHCLPRODSxI_WorkGroupMarkUp" EntityType="cds_xhclprodsxworkgroup_sd.xHCLPRODSxI_WorkGroupMarkUpType" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_MaterialText" EntityType="cds_xhclprodsxworkgroup_sd.I_MaterialTextType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_4FB52FA418CED9E83B4E6976B1162AEF" Association="cds_xhclprodsxworkgroup_sd.assoc_4FB52FA418CED9E83B4E6976B1162AEF" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xHCLPRODSxC_WorkGroup" Role="FromRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF"/>
+                    <End EntitySet="xHCLPRODSxI_MROPRODUCTMBXD" Role="ToRole_assoc_4FB52FA418CED9E83B4E6976B1162AEF"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_7D1E731FBCFC121CE592E4EAA95C5B9D" Association="cds_xhclprodsxworkgroup_sd.assoc_7D1E731FBCFC121CE592E4EAA95C5B9D" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xHCLPRODSxC_WorkGroup" Role="FromRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D"/>
+                    <End EntitySet="xHCLPRODSxI_WorkGroupMarkUp" Role="ToRole_assoc_7D1E731FBCFC121CE592E4EAA95C5B9D"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_8D8720DF3E590EC56605D98309179DB4" Association="cds_xhclprodsxworkgroup_sd.assoc_8D8720DF3E590EC56605D98309179DB4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xHCLPRODSxI_WorkGroupMarkUp" Role="FromRole_assoc_8D8720DF3E590EC56605D98309179DB4"/>
+                    <End EntitySet="xHCLPRODSxC_WorkGroup" Role="ToRole_assoc_8D8720DF3E590EC56605D98309179DB4"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_75F61F496D078307F563D8271C222194" Association="cds_xhclprodsxworkgroup_sd.assoc_75F61F496D078307F563D8271C222194" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xHCLPRODSxI_MROPRODUCTMBXD" Role="FromRole_assoc_75F61F496D078307F563D8271C222194"/>
+                    <End EntitySet="xHCLPRODSxC_WorkGroup" Role="ToRole_assoc_75F61F496D078307F563D8271C222194"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType/matnr" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Material"/>
+                        <PropertyValue Property="CollectionPath" String="I_MaterialText"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="matnr"/>
+                                    <PropertyValue Property="ValueListProperty" String="Material"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MaterialName"/>
+                                    <PropertyValue Property="ValueListProperty" String="MaterialName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Language"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType/bill_method" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Billing Method"/>
+                        <PropertyValue Property="CollectionPath" String="xHCLPRODSxC_BillingMethodVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="bill_method"/>
+                                    <PropertyValue Property="ValueListProperty" String="bill_method"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="bezei"/>
+                                    <PropertyValue Property="ValueListProperty" String="bezei"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="spras"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.cds_xhclprodsxworkgroup_sd_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.xHCLPRODSxC_WorkGroupType/BowWg" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.cds_xhclprodsxworkgroup_sd_Entities/xHCLPRODSxC_WorkGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_mpmbxd"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_wgMark"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.cds_xhclprodsxworkgroup_sd_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.SAP__Currency/CurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.SAP__UnitOfMeasure/UnitCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+                <Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/>
+            </Annotations>
+            <Annotations Target="cds_xhclprodsxworkgroup_sd.SAP__UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.AlternateKeys">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Key">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="Name" Path="ExternalCode"/>
+                                        <PropertyValue Property="Alias" String="ExternalCode"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://52.179.137.65:8002/sap/opu/odata/hclprods/WORKGROUP_SB/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://52.179.137.65:8002/sap/opu/odata/hclprods/WORKGROUP_SB/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
